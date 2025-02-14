@@ -62,3 +62,7 @@ coverage.xml
 
 # PyBuilder
 target/
+
+
+#ENV
+venv
