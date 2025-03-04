@@ -13,7 +13,7 @@ setup(
         description=DESCRIPTION,
         long_description=LONG_DESCRIPTION,
         packages=find_packages(),
-        install_requires=["asn1tools"], # add any additional packages that 
+        install_requires=["asn1tools", "pyasn1"], # add any additional packages that 
         # needs to be installed along with your package. Eg: 'caer'
         package_data={'Cryptin': ['crypt/timestamp/tsp.asn']},
 
