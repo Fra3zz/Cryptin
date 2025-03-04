@@ -1,0 +1,32 @@
+TSP-REQUEST DEFINITIONS ::= BEGIN
+
+TimeStampReq ::= SEQUENCE {
+   version                      INTEGER  { v1(1) },
+   messageImprint               MessageImprint,
+   reqPolicy             TSAPolicyId              OPTIONAL,
+   nonce                 INTEGER                  OPTIONAL,
+   certReq               BOOLEAN                  DEFAULT FALSE,
+   extensions            [0] IMPLICIT Extensions  OPTIONAL
+}
+
+MessageImprint ::= SEQUENCE {
+   hashAlgorithm                AlgorithmIdentifier,
+   hashedMessage                OCTET STRING
+}
+
+AlgorithmIdentifier ::= SEQUENCE {
+   algorithm                OBJECT IDENTIFIER,
+   parameters               ANY DEFINED BY algorithm OPTIONAL
+}
+
+TSAPolicyId ::= OBJECT IDENTIFIER
+
+Extensions ::= SEQUENCE SIZE (1..MAX) OF Extension
+
+Extension ::= SEQUENCE {
+   extnID                    OBJECT IDENTIFIER,
+   critical                  BOOLEAN DEFAULT FALSE,
+   extnValue                 OCTET STRING
+}
+
+END
