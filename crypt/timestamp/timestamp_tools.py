@@ -1,12 +1,13 @@
 import asn1tools
 from base64 import b64encode
 from hashlib import sha256
+import pathlib
 
 
 def make_timestamp_request(message:bytes):
 
     # Step 1: Compile the ASN.1 schema blueprint
-    tsp = asn1tools.compile_files('./tsp.asn')
+    tsp = asn1tools.compile_files(str(pathlib.Path(__file__).parent / "tsp.asn"))
 
     # Step 2: Define the data to be encoded
     data = {
