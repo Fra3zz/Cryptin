@@ -6,7 +6,7 @@ LONG_DESCRIPTION = 'Simple xor opeartions with the creation of xor object.'
 
 # Setting up
 setup(
-        name="xorCrypt", 
+        name="Cryptin", 
         version=VERSION,
         author="Fra3zz",
         author_email="",
